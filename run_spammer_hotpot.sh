@@ -1,7 +1,7 @@
 #!/bin/bash
 # for num_spammer from 1 to 7, assign GPU (num_spammer-1) and run experiments in background
 rm -f gpu_*.log
-dataset_name="TQA"
+dataset_name="hotpotqa"
 for num_spammer in {1..7}; do
     (
         # GPU 번호 지정 (예: num_spammer=1이면 GPU 0 사용)
