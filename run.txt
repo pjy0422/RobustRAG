@@ -1,0 +1,69 @@
+CUDA_VISIBLE_DEVICES=0 python main.py \
+    --model_name llama7b \
+    --dataset_name open_nq \
+    --top_k 5 \
+    --attack Poison \
+    --defense_method keyword \
+    --alpha 0.3 \
+    --beta 3 \
+    --corruption_size 3 \
+    --use_cache \
+    --no_vanilla \
+    --save_response \
+    --debug
+
+
+    CUDA_VISIBLE_DEVICES=0 python main.py \
+    --model_name llama7b \
+    --dataset_name NQ_SH_adv_2_source_5 \
+    --top_k 10 \
+    --attack none \
+    --defense_method keyword \
+    --alpha 0.3 \
+    --beta 3 \
+    --corruption_size 0 \
+    --use_cache \
+    --no_vanilla \
+    --save_response \
+    --debug
+
+    CUDA_VISIBLE_DEVICES=1 python main.py \
+    --model_name llama7b \
+    --dataset_name NQ_SH_adv_3_source_5 \
+    --top_k 10 \
+    --attack none \
+    --defense_method keyword \
+    --alpha 0.3 \
+    --beta 3 \
+    --corruption_size 0 \
+    --use_cache \
+    --no_vanilla \
+    --save_response \
+    --debug
+
+    CUDA_VISIBLE_DEVICES=4 python main.py \
+    --model_name llama7b \
+    --dataset_name NQ_SH_adv_2_source_5 \
+    --top_k 10 \
+    --attack none \
+    --defense_method decoding \
+    --alpha 0.3 \
+    --beta 3 \
+    --corruption_size 0 \
+    --no_vanilla \
+    --save_response \
+    --debug
+
+    CUDA_VISIBLE_DEVICES=5 python main.py \
+    --model_name llama7b \
+    --dataset_name NQ_SH_adv_3_source_5 \
+    --top_k 10 \
+    --attack none \
+    --defense_method decoding \
+    --alpha 0.3 \
+    --beta 3 \
+    --corruption_size 0 \
+    --use_cache \
+    --no_vanilla \
+    --save_response \
+    --debug
